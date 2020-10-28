@@ -6,6 +6,6 @@ module.exports = {
     description: 'test',
     category: 'dev',
 	execute(message, client, args, log) {
-        message.channel.sen("test");
+        message.channel.send("test");
 	},
 };
