@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'ping',
+	aliases: ['p'],
 	description: '',
 	cooldown: 5,
 	execute(message, client, args) {
