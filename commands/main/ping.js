@@ -5,6 +5,7 @@ module.exports = {
 	aliases: ['p'],
 	description: '',
 	cooldown: 5,
+	category: 'main',
 	execute(message, client, args) {
 
 		var yourping = new Date().getTime() - message.createdTimestamp

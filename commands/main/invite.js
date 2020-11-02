@@ -4,6 +4,7 @@ module.exports = {
     aliases: ['i'], 
     description: 'Zaproszenie bota',
     cooldown: '5',
+    category: 'main',
 	execute(message, client, args) {
         const inviteEmbed = new Discord.MessageEmbed()
             .setColor('#9900ff')

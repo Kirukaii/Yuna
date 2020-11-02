@@ -33,12 +33,12 @@ const load = (dir = "./commands/") => {
 				// we add the the comamnd to the collection, Map.prototype.set() for more info
 				client.commands.set(pull.name, pull);
 				// we log if the command was loaded.
-				console.log(`${success} Loaded command ${pull.name}.`);
+				console.log(`${pull.category} - ${pull.name} | Loading status: [${success}]`);
 
 			}
 			else {
 			// we check if the command is loaded else throw a error saying there was command it didn't load
-				console.log(`${error} Error loading command in ${dir}${dirs}. you have a missing help.name or help.name is not a string. or you have a missing help.category or help.category is not a string`);
+				console.log(`Błąd C-H: ${error} Error loading command in ${dir}${dirs}. you have a missing command.name or command.name is not a string. or you have a missing command.category or command.category is not a string`);
 				// we use continue to load other commands or else it will stop here
 				continue;
 			}
@@ -57,17 +57,6 @@ const load = (dir = "./commands/") => {
 
 // we call the function to all the commands.
 load();
-
-// client.commands = new Collection();
-// const commandFiles = readdirSync('./commands/').filter(file => file.endsWith('.js'));
-// for (const file of commandFiles) {
-// 	const command = require(`./commands/${file}`);
-
-// 	// set a new item in the Collection
-// 	// with the key as the command name and the value as the exported module
-// 	log(file)
-// 	client.commands.set(command.name, command);
-// }
 
 client.once('ready', () => {
 	console.log(chalk.green.bold('Ready!'));

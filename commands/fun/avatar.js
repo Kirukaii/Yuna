@@ -4,6 +4,7 @@ module.exports = {
     description: 'wyświetla avatar',
     usage: '<nick>',
     cooldown: 3,
+    category: 'fun',
 	execute(message, args) {
         var user = message.mentions.users.first();
         if(!user){
