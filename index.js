@@ -6,7 +6,7 @@ const { info,} = require('console');
 const { Collection } = require("discord.js");
 const { sep } = require("path");
 
-const { success, eror, warning } = require("log-symbols");
+const { success, error, warning } = require("log-symbols");
 
 
 const client = new Discord.Client();
