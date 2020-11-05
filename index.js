@@ -101,7 +101,7 @@ client.on('message', message => {
 	
 	//check if args are necessary
 	if (command.category == "dev" && message.author.id != "277549992237858816") {
-		return message.channel.send("NICE TRY, but actually not.");
+		return message.channel.send("Only for the Developer!");
 	}
 	
     if (command.args && !args.length) {
