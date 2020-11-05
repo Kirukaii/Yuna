@@ -7,5 +7,6 @@ module.exports = {
     category: 'dev',
 	execute(message, client, args, log) {
         message.channel.send("test");
+        log("test")
 	},
 };
