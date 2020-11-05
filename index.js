@@ -100,7 +100,11 @@ client.on('message', message => {
 	
 	
 	//check if args are necessary
-	if (command.args && !args.length) {
+	if (command.category == "dev" && message.author.id != "277549992237858816") {
+		return message.channel.send("NICE TRY, but actually not.");
+	}
+	
+    if (command.args && !args.length) {
 		let reply = `Nie podałeś żadnych argumentów, ${message.author}!`;
 
 		if (command.usage) {
@@ -109,7 +113,6 @@ client.on('message', message => {
 
 		return message.channel.send(reply);
     }
-    
 
 
 	//cooldowns
