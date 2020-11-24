@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { prefix } = require('./../../config.json');
 module.exports = {
     name: 'help',
@@ -14,7 +14,7 @@ module.exports = {
         
         if (!args[0]) {
           const a = commands.filter(command => command.category != 'dev');
-          const helpEmbed = new Discord.MessageEmbed()
+          const helpEmbed = new MessageEmbed()
             .setColor('#0099ff')
             .setAuthor(`Yuna's Commands`, client.user.displayAvatarURL())
             .setTitle(a.map(command => command.name).join('\n'))
@@ -24,20 +24,6 @@ module.exports = {
           
           message.channel.send(helpEmbed);
           
-            // data.push('Lista moich komend:');
-            // data.push("**"+);
-            // data.push(`\nUżyj\`${prefix}help [Nazwa Komendy]\` by dowiedzieć się więcej o danej komendzie!`);
-            
-            
-            // return message.channel.send(data, { split: true })
-                // .then(() => {
-                //     if (message.channel.type === 'dm') return;
-                //     message.reply('Wysłałam ci DM ze wszystkimi komendami :wink:');
-                // })
-                // .catch(error => {
-                //     console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-                //     message.reply('Nie mogę wysłać ci wiadmości! :confused: ');
-                // });
         }else{
           
           const name = args[0].toLowerCase();
@@ -47,7 +33,7 @@ module.exports = {
             return message.reply('Taka komenda nie istnieje!');
           }
 
-          const helpEmbed2 = new Discord.MessageEmbed()
+          const helpEmbed2 = new MessageEmbed()
             .setColor('#0099ff')
             .setAuthor(`Command Info`, client.user.displayAvatarURL())
             .setThumbnail(client.user.displayAvatarURL())
@@ -63,19 +49,7 @@ module.exports = {
 
           
           message.channel.send(helpEmbed2);
-
-
-
-
-                // data.push(`**Nazwa:** ${command.name}`);
-
-                // if (command.aliases) data.push(`**Skróty:** ${command.aliases.join(', ')}`);
-                // if (command.description) data.push(`**Opis:** ${command.description}`);
-                // if (command.usage) data.push(`**Użycie:**  ${prefix}${command.name} ${command.usage}`);
-
-                // data.push(`**Czas odnowienia:** ${command.cooldown || 3} second(s)`);
-
-                // message.channel.send(data, { split: true });
+   
          }
       },
   };
